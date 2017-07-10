@@ -4,7 +4,7 @@
     </head>
     <body>
         @section('sidebar')
-            This is teh master sidebar.
+            This is the master sidebar.
         @show
 
         <div class="container">
@@ -12,3 +12,4 @@
         </div>
     </body>
 </html>
+
