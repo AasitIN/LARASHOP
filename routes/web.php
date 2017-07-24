@@ -29,3 +29,41 @@ Route::get('blade',function(){
     $drinks=array('Vodka','Gin','Brandy');
     return view('page',array('name'=>'Marta','day'=>'Friday','drinks'=>$drinks));
 });
+
+Route::get('/insert',function(){
+    App\Category::create(array('name'=>'Music'));
+    return 'category added';
+});
+
+Route::get('/read',function(){
+   $category = new App\Category();
+
+    $data=$category->all(array('name','id'));
+
+    foreach ($data as $list){
+        echo $list->id . ' ' . $list->name . ' ';
+    }
+});
+
+Route::get('/update',function(){
+    $category = App\Category::find(1);
+    $category->name='COMPLEMENTS';
+    $category->save();
+
+    $data=$category->all(array('name','id'));
+
+    foreach ($data as $element){
+        echo $element->id . ' ' . $element->name . '<br>';
+    }
+});
+
+Route::get('/delete',function(){
+    $category = App\Category::find(1);
+    $category->delete();
+
+    $data=$category->all(array('name','id'));
+
+    foreach ($data as $element){
+        echo $element->id . ' ' . $element->name . '<br>';
+    }
+});
