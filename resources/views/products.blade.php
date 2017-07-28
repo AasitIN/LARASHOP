@@ -19,7 +19,6 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Features Items</h2>
-                    <div class="col-sm-4">
 
                         @foreach($products as $product)
 
@@ -28,15 +27,17 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/product2.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <h2>US $ {{$product->price}}</h2>
+                                            <p>{{$product->title}}</p>
+                                            <a href="{{url('cart')}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            <a href='{{url("products/details/$product->id")}}' class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                         </div>
                                         <div class="product-overlay">
                                             <div class="overlay-content">
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                <h2>US $ {{$product->price}}</h2>
+                                                <p>{{$product->title}}</p>
+                                                <a href="{{url('cart')}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                <a href='{{url("products/details/$product->id")}}' class="btn btn-default add-to-cart"><i class="fa fa-info"></i>View Details</a>
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +59,6 @@
                         <li><a href="">3</a></li>
                         <li><a href="">&raquo;</a></li>
                     </ul>
-                </div><!--features_items-->
             </div>
         </div>
     </div>

@@ -18,6 +18,7 @@
             <div class="col-sm-9">
                 <div class="blog-post-area">
                     <h2 class="title text-center">Latest From our Blog</h2>
+                    @foreach()
                     <div class="single-blog-post">
                         <h3>Girls Pink T Shirt arrived in store</h3>
                         <div class="post-meta">

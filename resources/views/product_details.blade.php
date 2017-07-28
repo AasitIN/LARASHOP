@@ -58,12 +58,13 @@
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
                             <img src="{{asset('images/product-details/new.jpg')}}" class="newarrival" alt="" />
-                            <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                            <p>Web ID: 1089772</p>
+                            <h2>{{$product->name}}</h2>
+                            <p>Web ID: {{$product->id}}</p>
+                            <p>{{$product->description}}</p>
                             <img src="{{asset('images/product-details/rating.png')}}" alt="" />
                             <form method="GET" action="{{url('cart')}}">
                                 <span>
-                                    <span>US $59</span>
+                                    <span>US ${{$product->price}}</span>
                                     <label>Quantity:</label>
                                     <input type="text" value="3" id="quantity" name="quantity" />
                                     <button type="submit" class="btn btn-fefault cart">
@@ -72,9 +73,8 @@
                                     </button>
                                 </span>
                             </form>
-                            <p><b>Availability:</b> In Stock</p>
-                            <p><b>Condition:</b> New</p>
-                            <p><b>Brand:</b> E-SHOPPER</p>
+                            <p><b>Brand:</b> {{App\Brand::find($product->brand_id)->name}}</p>
+                            <p><b>Category:</b> {{App\Category::find($product->category_id)->name}}</p>
                             <a href=""><img src="{{asset('images/product-details/share.png')}}" class="share img-responsive"  alt="" /></a>
                         </div><!--/product-information-->
                     </div>
@@ -96,8 +96,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery1.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -108,8 +108,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery2.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -120,8 +120,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery3.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -132,8 +132,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery4.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -147,8 +147,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery1.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -159,8 +159,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery3.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -171,8 +171,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery2.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -183,8 +183,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery4.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -198,8 +198,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery1.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -210,8 +210,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery2.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -222,8 +222,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery3.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -234,8 +234,8 @@
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <img src="{{asset('images/home/gallery4.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
+                                            <h2>$ {{$product->price}}</h2>
+                                            <p>{{$product->name}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
@@ -281,8 +281,8 @@
                                         <div class="single-products">
                                             <div class="productinfo text-center">
                                                 <img src="{{asset('images/home/recommend1.jpg')}}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
+                                                <h2>$ {{$product->price}}</h2>
+                                                <p>{{$product->name}}</p>
                                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
@@ -293,8 +293,8 @@
                                         <div class="single-products">
                                             <div class="productinfo text-center">
                                                 <img src="{{asset('images/home/recommend2.jpg')}}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
+                                                <h2>$ {{$product->price}}</h2>
+                                                <p>{{$product->name}}</p>
                                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
@@ -305,8 +305,8 @@
                                         <div class="single-products">
                                             <div class="productinfo text-center">
                                                 <img src="{{asset('images/home/recommend3.jpg')}}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
+                                                <h2>$ {{$product->price}}</h2>
+                                                <p>{{$product->name}}</p>
                                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
@@ -319,8 +319,8 @@
                                         <div class="single-products">
                                             <div class="productinfo text-center">
                                                 <img src="{{asset('images/home/recommend1.jpg')}}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
+                                                <h2>$ {{$product->price}}</h2>
+                                                <p>{{$product->name}}</p>
                                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
@@ -331,8 +331,8 @@
                                         <div class="single-products">
                                             <div class="productinfo text-center">
                                                 <img src="{{asset('images/home/recommend2.jpg')}}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
+                                                <h2>$ {{$product->price}}</h2>
+                                                <p>{{$product->name}}</p>
                                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
@@ -343,8 +343,8 @@
                                         <div class="single-products">
                                             <div class="productinfo text-center">
                                                 <img src="{{asset('images/home/recommend3.jpg')}}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
+                                                <h2>$ {{$product->price}}</h2>
+                                                <p>{{$product->name}}</p>
                                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
