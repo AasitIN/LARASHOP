@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Coses afegides per mi
+         */
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,//service provider del carro de la compra
+
     ],
 
     /*
@@ -225,6 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,//Alias del carro de la compra
 
     ],
 

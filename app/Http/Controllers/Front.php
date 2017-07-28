@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Controlador Front
+ *
+ * És el controlador principal de la web, en ell hi ha totes les funcions principals que es criden des de web.php
+ * Totes elles retornen una vista.
+ *
+ * @author Marta Soler amb la guía de kode-blog.com
+ *
+ */
 namespace App\Http\Controllers;
 
 use App\Brand;
@@ -15,6 +23,9 @@ class Front extends Controller
     var $title;
     var $description;
 
+    /**
+     * Front constructor.
+     */
     public function __construct()
     {
         $this->brands = Brand::all(array('name'));
@@ -72,6 +83,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment mostra el mateix que la funció products()
+     *
      * @param $name
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -81,6 +94,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment mostra el mateix que la funció products()
+     *
      * @param $name
      * @param null $category
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -91,6 +106,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment no fa res de bo
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function blog(){
@@ -99,6 +116,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment no fa res de bo
+     *
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -108,6 +127,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment no fa res de bo
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function contact_us() {
@@ -115,6 +136,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment no fa res de bo
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function login() {
@@ -122,6 +145,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment no fa res de bo
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function logout() {
@@ -129,6 +154,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment no fa res de bo
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function cart() {
@@ -136,6 +163,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment no fa res de bo
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function checkout() {
@@ -143,6 +172,8 @@ class Front extends Controller
     }
 
     /**
+     * De moment no fa res de bo
+     *
      * @param $query
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
