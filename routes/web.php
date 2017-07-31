@@ -25,6 +25,13 @@ Route::get('/cart','Front@cart');
 Route::get('/checkout','Front@checkout');
 Route::get('/search/{query}','Front@search');
 
+
+Route::post('/cart','Front@cart');
+
+
+/**
+ * Rute sno sèries de proves i tal
+ */
 Route::get('blade',function(){
     $drinks=array('Vodka','Gin','Brandy');
     return view('page',array('name'=>'Marta','day'=>'Friday','drinks'=>$drinks));
