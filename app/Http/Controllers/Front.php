@@ -161,15 +161,33 @@ class Front extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function cart() {
-        if (Request::isMethod('post')){
+
+        $message = '';
+
+        if (Request::isMethod('post')) {
             $product_id = Request::get('product_id');
             $product = Product::find($product_id);
-            Cart::add(array('id' => $product_id, 'name' => $product->title, 'qty' => 1, 'price'=>$product->price));
-
-            $cart = Cart::content();
+            Cart::add(array('id' => $product_id, 'name' => $product->title, 'qty' => 1, 'price' => $product->price));
         }
 
-        return view('cart', array('title' => 'Welcome','description' => '','page' => 'home'));
+        if (Request::isMethod('get')&&(Request::get('ingrement'))==1){
+            //$rowId = Cart::search(function($key, $value) { return $key->id == Request::get('product_id'); })
+            $rowId = Cart::search(function($cartItem,$value){return $cartItem->id===Request::get('product_id');});
+            $item = Cart::get($rowId[0]);
+
+            Cart::update($rowId[0]->id, $item->qty +1);
+        }
+
+        if (Request::isMethod('get')&&(Request::get('decrease'))==1){
+            $rowId = Cart::search(function($cartItem,$value){return $cartItem->id===Request::get('product_id');});
+            $item = Cart::get($rowId[0]);
+
+            Cart::update($rowId[0]->id, $item->qty -1);
+        }
+
+        $cart = Cart::content();
+
+        return view('cart', array('cart'=>$cart,'title' => 'Welcome','description' => '','page' => 'home','message'=>$message));
     }
 
     /**
