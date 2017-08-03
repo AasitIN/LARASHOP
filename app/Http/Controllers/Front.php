@@ -170,20 +170,19 @@ class Front extends Controller
             Cart::add(array('id' => $product_id, 'name' => $product->title, 'qty' => 1, 'price' => $product->price));
         }
 
-        if (Request::isMethod('get')&&(Request::get('ingrement'))==1){
-            //$rowId = Cart::search(function($key, $value) { return $key->id == Request::get('product_id'); })
-            $rowId = Cart::search(function($cartItem,$value){return $cartItem->id===Request::get('product_id');});
-            $item = Cart::get($rowId[0]);
+        if (Request::isMethod('get')&&(Request::get('increment'))==1){
+            $item = Cart::search(function($cartItem,$value){return $cartItem->id===Request::get('product_id');})->first();
 
-            Cart::update($rowId[0]->id, $item->qty +1);
+            Cart::update($item->rowId, $item->qty +1);
         }
 
-        if (Request::isMethod('get')&&(Request::get('decrease'))==1){
-            $rowId = Cart::search(function($cartItem,$value){return $cartItem->id===Request::get('product_id');});
-            $item = Cart::get($rowId[0]);
+            if (Request::isMethod('get')&&(Request::get('decrease'))==1){
 
-            Cart::update($rowId[0]->id, $item->qty -1);
-        }
+                $item = Cart::search(function($cartItem,$value){return $cartItem->id===Request::get('product_id');})->first();
+
+                Cart::update($item->rowId, $item->qty -1);
+            }
+
 
         $cart = Cart::content();
 
