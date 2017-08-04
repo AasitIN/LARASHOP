@@ -171,18 +171,29 @@ class Front extends Controller
         }
 
         if (Request::isMethod('get')&&(Request::get('increment'))==1){
-            $item = Cart::search(function($cartItem,$value){return $cartItem->id===Request::get('product_id');})->first();
+            $item = Cart::search(function($cartItem){return $cartItem->id===Request::get('product_id');})->first();
 
             Cart::update($item->rowId, $item->qty +1);
         }
 
-            if (Request::isMethod('get')&&(Request::get('decrease'))==1){
+        if (Request::isMethod('get')&&(Request::get('decrease'))==1){
 
-                $item = Cart::search(function($cartItem,$value){return $cartItem->id===Request::get('product_id');})->first();
+            $item = Cart::search(function($cartItem){return $cartItem->id===Request::get('product_id');})->first();
 
-                Cart::update($item->rowId, $item->qty -1);
-            }
+            Cart::update($item->rowId, $item->qty -1);
+        }
 
+        if (Request::isMethod('get')&&(Request::get('delete'))==1){
+
+            $item = Cart::search(function($cartItem){return $cartItem->id===Request::get('product_id');})->first();
+
+            Cart::remove($item->rowId);
+        }
+
+        if (Request::isMethod('get')&&(Request::get('clear'))==1){
+
+            Cart::destroy();
+        }
 
         $cart = Cart::content();
 

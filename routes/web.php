@@ -74,3 +74,7 @@ Route::get('/delete',function(){
         echo $element->id . ' ' . $element->name . '<br>';
     }
 });
+
+Route::get('/caca', function(){
+   echo function($cartItem) {return $cartItem->id===1;};
+});
