@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'Front@index');
+Route::get('/home','Front@index');
 Route::get('/products', 'Front@products');
 Route::get('/products/details/{id}','Front@product_details');
 Route::get('/products/category','Front@product_categories');
@@ -78,3 +79,7 @@ Route::get('/delete',function(){
 Route::get('/caca', function(){
    echo function($cartItem) {return $cartItem->id===1;};
 });
+
+Auth::routes();
+
+/**Route::get('/home', 'HomeController@index')->name('home');*/
